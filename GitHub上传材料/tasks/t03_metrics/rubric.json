@@ -1,0 +1,29 @@
+{
+  "task_id": "t03_metrics",
+  "title": "确定性单标签多分类评测器",
+  "function": "solve(y_true, y_pred, labels) -> dict",
+  "mutants": ["mutant_transposed", "mutant_weighted_macro", "mutant_drop_unused"],
+  "tests": {
+    "test_perfect_prediction": 5,
+    "test_hand_calculated_three_class": 5,
+    "test_label_order_controls_axes": 5,
+    "test_unused_class_in_macro_average": 5,
+    "test_zero_true_support": 5,
+    "test_zero_prediction_support": 5,
+    "test_all_predictions_wrong": 5,
+    "test_empty_observations": 5,
+    "test_unequal_support_uses_macro_average": 5,
+    "test_single_class": 5,
+    "test_tuple_inputs": 5,
+    "test_inputs_unmutated_on_success": 5,
+    "test_inputs_unmutated_on_failure": 5,
+    "test_length_mismatch": 5,
+    "test_unknown_true_label": 5,
+    "test_unknown_predicted_label": 5,
+    "test_duplicate_and_empty_labels": 5,
+    "test_reject_invalid_containers": 5,
+    "test_reject_non_string_elements": 5,
+    "test_duplication_invariance": 5
+  },
+  "notes": "20 个测试方法各 5 分，总分 100。子测试任一失败则该方法不得分；失败和异常均算未通过。全部预期由手算或指标性质给出；不使用 reference 作为预期生成器。作品为新生成的 AI 辅助合成样例，不代表既往履历或官方认证。"
+}

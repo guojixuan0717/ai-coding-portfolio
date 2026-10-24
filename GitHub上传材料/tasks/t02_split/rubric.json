@@ -1,0 +1,29 @@
+{
+  "task_id": "t02_split",
+  "title": "确定性且不泄漏的按组训练验证集切分",
+  "function": "solve(records, validation_fraction, seed=0) -> {'train': list, 'validation': list}",
+  "mutants": ["mutant_row_split", "mutant_bankers_rounding", "mutant_first_seen_groups"],
+  "tests": {
+    "test_known_ascii_seed0": 5,
+    "test_known_unicode_seed7": 5,
+    "test_group_integrity_uneven_sizes": 5,
+    "test_half_up_rounding": 5,
+    "test_decimal_rounding_boundary": 5,
+    "test_zero_fraction": 5,
+    "test_one_fraction": 5,
+    "test_empty_input": 5,
+    "test_fresh_containers_and_original_objects": 5,
+    "test_relative_order_preserved": 5,
+    "test_membership_independent_of_input_order": 5,
+    "test_seed_controls_membership": 5,
+    "test_single_group_boundaries": 5,
+    "test_duplicate_rows_kept": 5,
+    "test_invalid_records_container": 5,
+    "test_invalid_record_type": 5,
+    "test_missing_empty_or_non_string_group": 5,
+    "test_invalid_fraction_type": 5,
+    "test_invalid_fraction_value": 5,
+    "test_invalid_seed_type": 5
+  },
+  "notes": "本次新建的 AI 辅助作品样例；全部夹具为合成数据。每个测试方法 5 分，方法内全部子测试通过才得分，合计 100 分。分数仅表示该公开测试集的结果，不是官方评分或专家认证。"
+}

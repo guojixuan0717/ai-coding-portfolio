@@ -1,0 +1,29 @@
+{
+  "task_id": "t01_dedup",
+  "title": "训练记录稳定去重（AI 辅助合成样例）",
+  "function": "solve(records, *, key_fields=('prompt', 'response'), normalize=True) -> list[dict]",
+  "mutants": ["mutant_last_wins", "mutant_lowercase", "mutant_first_field"],
+  "tests": {
+    "test_empty_input": 5,
+    "test_first_occurrence_metadata": 5,
+    "test_preserves_order_with_nonadjacent_duplicates": 5,
+    "test_all_key_fields_participate": 5,
+    "test_nfkc_normalization": 5,
+    "test_unicode_casefold": 5,
+    "test_strip_and_internal_whitespace": 5,
+    "test_normalization_can_be_disabled": 5,
+    "test_custom_key_fields": 5,
+    "test_does_not_mutate_input": 5,
+    "test_returns_shallow_dictionary_copies": 5,
+    "test_key_boundaries_and_empty_values": 5,
+    "test_invalid_records_container": 5,
+    "test_invalid_record_shapes_and_keys": 5,
+    "test_missing_required_fields": 5,
+    "test_required_values_must_be_strings": 5,
+    "test_invalid_key_fields_container": 5,
+    "test_invalid_key_fields_content": 5,
+    "test_normalize_requires_actual_bool": 5,
+    "test_seeded_ascii_first_occurrence_oracle": 5
+  },
+  "notes": "20 个方法各 5 分；方法内任一断言/子测试失败或异常则该方法为 0 分。样例评分规则不代表官方要求。所有数据均合成；参考与故障候选为 AI 辅助新建。"
+}
